@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'TutorApp';
+   isRequestsDisabled: string = "";
+   isHomeDisabled: string = "disabled active";
+   isHome: boolean = true;
+
+
+   disableHome(){
+    this.isRequestsDisabled = "";
+    this.isHomeDisabled = "disabled active";
+    
+
+   }
+   disableReqiests(){
+    this.isRequestsDisabled = "disabled active";
+    this.isHomeDisabled = "";
+  }
 }
