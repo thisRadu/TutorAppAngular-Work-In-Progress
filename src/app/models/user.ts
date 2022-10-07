@@ -7,13 +7,13 @@ export interface User {
     role?: number;
 }
 
-export interface UserRootObjects {
-    value: User[];
-    statusCode: number;
-    contentType?: any;
-}
-export interface UserRootObject {
-    value: User;
-    statusCode: number;
-    contentType?: any;
-}
+// export interface UserRootObjects {
+//     value: User[];
+//     statusCode: number;
+//     contentType?: any;
+// }
+// export interface UserRootObject {
+//     value: User;
+//     statusCode: number;
+//     contentType?: any;
+// }

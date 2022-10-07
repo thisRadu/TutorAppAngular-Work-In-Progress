@@ -1,0 +1,36 @@
+
+  <section
+  class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start "
+  >
+  <div class="container">
+    <section class="p-5">
+      <div class="container">
+        <div class="row text-center g-4">
+
+
+
+          <div class="col-lg" *ngFor="let category of categories">
+            <div class="card bg-secondary text-light">
+              <div class="card-body text-center">
+      
+                <h3 class="card-title mb-3">{{category.id}}</h3>
+                <p class="card-text">
+                  {{category.name}} 
+                </p>
+                <div class="col-lg" *ngFor="let subCategory of subCategories">
+                    <p *ngIf="category.id == subCategory.categoryId">
+                     {{subCategory.name}}
+                    </p>
+
+                </div>
+                <a [routerLink]="['/category', category.id]" class="btn btn-dark">Read More</a>
+              </div>
+            </div>
+          </div>
+
+         
+    </div>
+  </div>
+  </section>
+</div>
+</section>

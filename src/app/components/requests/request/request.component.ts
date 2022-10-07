@@ -1,6 +1,6 @@
 import { JsonpInterceptor } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Request, RequestRootObject, RequestRootObjects } from 'src/app/models/request';
+import { Request } from 'src/app/models/request';
 import { Observable } from 'rxjs/internal/Observable';
 import { RequestsService } from 'src/app/services/requests.service';
 import { ActivatedRoute } from '@angular/router'

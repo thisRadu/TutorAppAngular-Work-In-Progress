@@ -13,9 +13,9 @@ export interface Request {
     deleted?: boolean;
 
 }
-export interface RequestRootObjects{
-    value: Request[]
-}
-export interface RequestRootObject{
-    value: Request
-}
+// export interface RequestRootObjects{
+//     value: Request[]
+// }
+// export interface RequestRootObject{
+//     value: Request
+// }

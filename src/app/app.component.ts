@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';  
 
 @Component({
   selector: 'app-root',
@@ -6,20 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+ constructor(private authService: AuthService){}
   title = 'TutorApp';
+   isLoggedIn:boolean = false;
    isRequestsDisabled: string = "";
    isHomeDisabled: string = "disabled active";
    isHome: boolean = true;
-
-
-   disableHome(){
-    this.isRequestsDisabled = "";
-    this.isHomeDisabled = "disabled active";
-    
-
+   ngOnInit(): void {
+    this.checkIsLoggedIn();
    }
-   disableReqiests(){
-    this.isRequestsDisabled = "disabled active";
-    this.isHomeDisabled = "";
-  }
+
+ checkIsLoggedIn(){
+
+this.isLoggedIn = this.authService.isLoggedIn();
+console.log(this.isLoggedIn);
+console.log(" has acces?: "+ this.authService.haveAccess());
+ }
 }
