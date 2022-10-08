@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  url = '';
   cmessageclass = ''
   message = ''
   Customerid: any;
@@ -20,8 +21,10 @@ export class LoginComponent implements OnInit {
     localStorage.clear();
   }
   login = new FormGroup({
-    userName: new FormControl("", Validators.required),
-    password: new FormControl("", Validators.required)
+    userName: new FormControl(localStorage.getItem('username'), Validators.required),
+    password: new FormControl("", Validators.required),
+    rememberMe: new FormControl("")
+
   });
  
 
@@ -31,16 +34,21 @@ export class LoginComponent implements OnInit {
   proceedLogin() {
     
     if (this.login.valid) {
+      console.log("remember me: " +this.login.value.rememberMe )
       const querry = "?userName="+this.login.value.userName + "&password=" +this.login.value.password ;
       this.service.proceedLogin(querry).subscribe(result => {
         if(result!=null){
           this.responsedata=result;
           if (this.responsedata["statusCode"] != "200") return;
-          console.log(this.responsedata["value"]);
+       
           this.service.setCookie(this.responsedata["value"]);
-          console.log(this.service.isLoggedIn());
+          if(this.login.value.rememberMe){
+            var localUser: any = this.login.value.userName;
+            localStorage.setItem('username', localUser)
+          }
+         
          //localStorage.setItem('token',this.responsedata["value"].jwtToken);
-          this.route.navigate([''])
+          this.route.navigate([this.service.redirectUrl])
         }
 
       });

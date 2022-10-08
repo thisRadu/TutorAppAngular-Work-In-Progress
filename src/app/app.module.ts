@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { RegisterComponent } from './components/auth/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { RegisterComponent } from './components/auth/register/register.component
     CategoryComponent,
     UsersComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
 
 
   ],
@@ -40,7 +44,7 @@ import { RegisterComponent } from './components/auth/register/register.component
     
 
   ],
-  providers:[],//[CookieService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
+  providers:[CookieService,{provide:HTTP_INTERCEPTORS,useClass:TokenInterceptorService,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

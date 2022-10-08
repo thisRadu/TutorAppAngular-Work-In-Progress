@@ -1,0 +1,17 @@
+#txtpassword, #txtname{
+    position: relative;
+    margin: 10px;
+    width: 450;
+}
+button{
+   
+    box-shadow: 1px 0px 5px rgb(156, 156, 156);
+    margin: 10px;
+
+    
+    
+    
+}
+button:hover{
+    box-shadow: 1px 1px 10px rgb(156, 156, 156);
+}

@@ -7,20 +7,15 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- constructor(private authService: AuthService){}
+ constructor(public authService: AuthService){}
   title = 'TutorApp';
-   isLoggedIn:boolean = false;
-   isRequestsDisabled: string = "";
-   isHomeDisabled: string = "disabled active";
-   isHome: boolean = true;
+
    ngOnInit(): void {
-    this.checkIsLoggedIn();
    }
+logOut(){
+  console.log("logout");
+this.authService.deleteCookie();
+this.authService.logOut();
+}
 
- checkIsLoggedIn(){
-
-this.isLoggedIn = this.authService.isLoggedIn();
-console.log(this.isLoggedIn);
-console.log(" has acces?: "+ this.authService.haveAccess());
- }
 }

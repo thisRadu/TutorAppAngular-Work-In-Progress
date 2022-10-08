@@ -29,7 +29,7 @@ ngOnDestroy() {
 
   getById(){
     
-    this.userService.getRequest(this.id).subscribe((r:User)=> this.user = r);
+    this.userService.getUser(this.id).subscribe((r:User)=> this.user = r);
   }
 
 }

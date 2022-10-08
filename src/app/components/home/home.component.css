@@ -1,0 +1,63 @@
+.roundImg{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+body{
+    margin:0;
+    font-family: 'Prompt, sans-serif';
+    color:white;
+    background: #202731;
+}
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding:100px 20vw;
+}
+.blue{
+    background: rgb(241,187,5);
+    background: linear-gradient(351deg, rgba(241,187,5,1) 0%, rgba(255,0,112,1) 100%);}
+.red{
+    background: rgb(255, 255, 255);
+}
+.pink{
+    background: rgba(241,187,5,1);
+}
+.dark{
+    background: rgb(57, 57, 66);
+}
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .layer1 {
+    background-image: url('./waves.svg');
+  }
+
+  .custom-shape-divider-top-1665249233 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1665249233 svg {
+    position: relative;
+    display: block;
+    width: calc(143% + 1.3px);
+    height: 189px;
+}
+
+.custom-shape-divider-top-1665249233 .shape-fill {
+    fill: #ffffff;
+    
+}

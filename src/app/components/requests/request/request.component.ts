@@ -14,7 +14,7 @@ import { ActivatedRoute } from '@angular/router'
 export class RequestComponent implements OnInit {
   id?: number;
   private sub: any;
-  requestById: Request = {};
+  requestById: Request = {} as Request;
   constructor(private requestService:RequestsService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

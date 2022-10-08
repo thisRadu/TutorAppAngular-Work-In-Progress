@@ -3,7 +3,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3 fixed-top">
       <div class="container">
-        <a href="#" class="navbar-brand">Tutor.ro</a>
+        <a href="" class="navbar-brand">Tutor.ro</a>
   
         <button
           class="navbar-toggler"
@@ -29,13 +29,20 @@
                <a href="/postRequest" class="nav-link"><i class="bi bi-file-earmark-plus"></i>Request Tutor</a>
                 
             </li>
-            <li *ngIf="isLoggedIn == false" class="nav-item">
+           
+            <li *ngIf="!(authService.isLogged$  | async)" class="nav-item">
                 <a href="/login" class="nav-link">Login</a>
-                <a href="/register" class="nav-link">Sing Up</a>
                 </li>
-                <li *ngIf="isLoggedIn == false" class="nav-item">
-                    <a href="/register" class="nav-link">Sing Up</a>
+                <li *ngIf="!(authService.isLogged$  | async)" class="nav-item">
+                    <a href="/register" class="nav-link">Sign Up</a>
                  </li>
+                 <li *ngIf="authService.isLogged$ | async" class="nav-item">
+                    <a [routerLink]="['/user', authService.userLogged]" class="nav-link" (click)="logOut()">{{authService.userLogged}}</a>
+                 </li>
+                 <li *ngIf="authService.isLogged$ | async" class="nav-item">
+                    <a href="" class="nav-link" (click)="logOut()">Log out</a>
+                 </li>
+                 
                 
           </ul>
         </div>
@@ -43,3 +50,12 @@
     </nav>
     <router-outlet ></router-outlet>
   </body>
+  <footer><div
+    class="text-center p-3"
+    style="background-color: rgba(0, 0, 0, 0.2)"
+    >
+ © 2020 Copyright:
+ <a class="text-white" href="https://Tutor.ro/"
+    >Tutor.ro 20022</a
+   >
+</div></footer>
