@@ -5,14 +5,3 @@ export interface SubCategory {
     deleted?: boolean;
 }
 
-// export interface SubCategoryRootObject {
-//     value: SubCategory;
-//     statusCode: number;
-//     contentType?: any;
-    
-// }
-// export interface SubCategoryRootObjects {
-//     value: SubCategory[];
-//     statusCode: number;
-//     contentType?: any;
-// }

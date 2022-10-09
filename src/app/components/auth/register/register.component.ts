@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   responsedata: any;
   errorMessage = "";
 
-  constructor(private service: AuthService,private route:Router) {
+  constructor(public service: AuthService,private route:Router) {
     localStorage.clear();
   }
  

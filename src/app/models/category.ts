@@ -3,16 +3,6 @@ export interface Category {
     name?: string;
     imageUrl?: string;
     deleted?: boolean;
+    color?: string;
 }
 
-// export interface CategoryRootObject {
-//     value: Category;
-//     statusCode: number;
-//     contentType?: any;
-    
-// }
-// export interface CategoryRootObjects {
-//     value: Category[];
-//     statusCode: number;
-//     contentType?: any;
-// }

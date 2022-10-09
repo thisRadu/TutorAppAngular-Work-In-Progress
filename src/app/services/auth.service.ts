@@ -30,7 +30,8 @@ export class AuthService {
    setCookie(token: string){
     this.cookie.delete("token");
     this.cookie.set("token", token);
-    this._isLogged$.next(true)
+    this._isLogged$.next(true);
+    this._loggedUser$.next(this.getLoggedUser());
 
    }
    getCookie(){

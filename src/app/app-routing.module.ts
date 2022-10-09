@@ -11,22 +11,31 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { AuthGuard } from './components/auth/auth.guard';
 import { RoleGuard } from './components/auth/role.guard';
 import { HomeComponent } from './components/home/home.component';
+import { PostRequestComponent } from './components/requests/post-request/post-request.component';
 
 const routes: Routes = [
-  {path:'', component: HomeComponent},
-  {path:'login', component: LoginComponent },
-  {path:'register', component: RegisterComponent },
-  {path:'requests', component: RequestsComponent },
-  {path:'users', component: UsersComponent, canActivate:[AuthGuard,RoleGuard] }, 
-  {path:'categories', component: CategoriesComponent },
-  {path:'request/:id', component: RequestComponent},
-  {path:'user/:id', component: UserComponent, canActivate:[RoleGuard] },
-  {path:'category/:id', component: CategoryComponent }
-  
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'requests', component: RequestsComponent },
+  {
+    path: 'new-request',
+    component: PostRequestComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'users',
+    component: UsersComponent,
+    canActivate: [AuthGuard, RoleGuard],
+  },
+  { path: 'categories', component: CategoriesComponent },
+  { path: 'request/:id', component: RequestComponent },
+  { path: 'user/:id', component: UserComponent, canActivate: [RoleGuard] },
+  { path: 'category/:id', component: CategoryComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

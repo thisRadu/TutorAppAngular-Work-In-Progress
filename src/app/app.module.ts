@@ -17,6 +17,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
+import { PostRequestComponent } from './components/requests/post-request/post-request.component';
 
 
 
@@ -30,7 +31,8 @@ import { HomeComponent } from './components/home/home.component';
     UsersComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    PostRequestComponent
 
 
   ],

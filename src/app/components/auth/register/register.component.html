@@ -1,5 +1,10 @@
-
-<div  class="container-fluid" style="margin-top: 10%;">
+<div *ngIf="service.isLogged$ | async" class="position-absolute top-0 start-50 translate-middle-x"style=" margin-top: 10%">
+    <div class="card p-3">
+      <h1>Already Logged In</h1>
+    <Button [routerLink] = "['']" class="btn"> Go back!</Button>
+    </div>
+    </div>
+<div *ngIf="(service.isLogged$ | async) == false" class="container-fluid" style="margin-top: 10%;">
     <div class="row">
       <div class="offset-lg-3 col-lg-6">
      

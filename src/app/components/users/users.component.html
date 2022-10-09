@@ -1,11 +1,11 @@
 <section
-class="bg-light text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start "
+  class="bg-light text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start"
 >
-<div class="container">
-
-<div *ngFor="let user of users">
- <a [routerLink]="['/user', user.id]" class="btn btn-primary pull-right">{{user.userName}}</a>
-
-</div>
-</div>
+  <div class="container">
+    <div *ngFor="let user of users">
+      <a [routerLink]="['/user', user.id]" class="btn btn-primary pull-right">{{
+        user.userName
+      }}</a>
+    </div>
+  </div>
 </section>

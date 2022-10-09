@@ -1,37 +1,26 @@
+<section>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans"
+    rel="stylesheet"
+  />
 
-
-  <section
-  class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start "
-  >
-  <div class="container">
-    <section class="p-5">
-      <div class="container">
-        <div class="row text-center g-4">
-
-
-
-          <div class="col-lg" *ngFor="let category of categories">
-            <div class="card bg-secondary text-light">
-              <div class="card-body text-center">
-      
-                <h3 class="card-title mb-3">{{category.id}}</h3>
-                <p class="card-text">
-                  {{category.name}} 
-                </p>
-                <div class="col-lg" *ngFor="let subCategory of subCategories">
-                    <p *ngIf="category.id == subCategory.categoryId">
-                     {{subCategory.name}}
-                    </p>
-
-                </div>
-                <a [routerLink]="['/category', category.id]" class="btn btn-dark">Read More</a>
-              </div>
-            </div>
-          </div>
-
-         
+  <div class="container py-3 pt-lg-4 pb-lg-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
+      <a *ngFor="let category of categories" href="#" class="card {{category.color}}">
+        <div class="overlay"></div>
+        <div class="circle">
+          <img
+            width="71px"
+            height="76px"
+            viewBox="29 14 71 76"
+            src="{{ category.imageUrl }}"
+            alt="an svg"
+          />
+        </div>
+        <p>{{ category.name }}</p>
+      </a>
     </div>
   </div>
-  </section>
-</div>
+
+ 
 </section>
