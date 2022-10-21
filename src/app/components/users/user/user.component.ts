@@ -6,30 +6,34 @@ import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-
   isTest = true;
   id?: number;
   private sub: any;
   user: User = {};
-  constructor(private userService:UserService, private route: ActivatedRoute) { }
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.sub = this.route.params.subscribe(params => {
-      this.id = +params['id']; 
-      this.getById();
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
+    // this.sub = this.route.params.subscribe(params => {
+    //   this.id = +params['id'];
+    this.getById();
 
-  })
-}
-ngOnDestroy() {
-  this.sub.unsubscribe();
-}
-
-  getById(){
-    
-    this.userService.getUser(this.id).subscribe((r:User)=> this.user = r);
+    //})
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
+  getById() {
+    this.userService
+      .getUser(Number(this.id))
+      .subscribe((r: User) => (this.user = r));
+  }
 }

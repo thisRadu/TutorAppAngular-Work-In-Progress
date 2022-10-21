@@ -1,53 +1,28 @@
-<!-- 
-  <section
-  class="bg-dark text-light p-5 p-lg-0 pt-lg-5 text-center text-sm-start "
-  >
-  <div class="container">
-    <section class="p-5">
-      <div class="container">
-        <div class="row text-center g-4">
+<section class="requestSection">
+  <h3 *ngIf="noRequestsFound" class="d-flex justify-content-center">
+    No requests found
+  </h3>
 
-
-
-          <div class="col-lg" *ngFor="let request of requests">
-            <div class="card bg-secondary text-light">
-              <div class="card-body text-center">
+ 
+  <div class="container py-3 pt-lg-4 pb-lg-5">
+    <span>{{requests.length}} Rezultate gasite </span>
+    <div class="row d-flex justify-content-center">
       
-                <h3 class="card-title mb-3">{{request.title}}</h3>
-                <p class="card-text">
-                 Budget {{request.price}} $
-                </p>
-                <a [routerLink]="['/request', request.id]" class="btn btn-dark">Read More</a>
-              </div>
-            </div>
-          </div>
-
+      <div *ngFor="let request of requests" class="card cardCss">
+        <div class="card-body p-4">
+          <i class="icon bi bi-twitter"></i>
+          <h3 class="card-title mb-3 fs-5">{{ request.title }}</h3>
+          <p class="card-text"> {{ request.details }} $</p>
+          <p class="card-text">Budget {{ request.price }} $</p>
+          <p class="card-text">categorie {{ request.categoryId }} </p>
+          <a [routerLink]="['/request', request.id]" class="btn btn-dark"
+            >Read More</a
+          >
+        </div>
+      </div>
+     
+        
+     
     </div>
   </div>
-  </section>
-</div>
 </section>
-  -->
-
-<section class="requestSection"> 
-
-    <div class="container py-3 pt-lg-4 pb-lg-5  ">
-                <div class=" row  row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 " >
-                  <div *ngFor="let request of requests" class="card cardCss">
-
-                <div class="card-body p-4">
-                  <i class="icon bi bi-twitter"></i>
-                <h3 class="card-title mb-3">{{request.title}}</h3>
-                <p class="card-text">
-                 Budget {{request.price}} $
-                </p>
-                <a [routerLink]="['/request', request.id]" class="btn btn-dark">Read More</a>
-                  </div>
-                  </div>
-               
-                </div>
-                
-     </div>
-
-</section>
-

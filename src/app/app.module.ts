@@ -18,6 +18,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostRequestComponent } from './components/requests/post-request/post-request.component';
+import { FiltersComponent } from './components/requests/filters/filters.component';
 
 
 
@@ -32,7 +33,8 @@ import { PostRequestComponent } from './components/requests/post-request/post-re
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    PostRequestComponent
+    PostRequestComponent,
+    FiltersComponent
 
 
   ],

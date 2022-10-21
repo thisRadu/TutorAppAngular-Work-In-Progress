@@ -1,0 +1,144 @@
+<!-- <div class=" d-flex justify-content-center"> -->
+<div class="container">
+  <div class="row">
+    <div
+      class="col col-lg-2 d-flex flex-column flex-shrink-0 p-3 text-white bg-dark m-4"
+      style="margin-top: 40px; width: 280px; height: 800px"
+    >
+      <div
+        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+      >
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap"></use>
+        </svg>
+        <span class="fs-4">Filtre</span>
+      </div>
+
+      <hr />
+      <span class="fs-5 mb-3">Dificultate</span>
+
+      <div [formGroup]="filters" style="margin-bottom: 30px">
+        <div *ngFor="let item of dificultyItems">
+          <div *ngIf="dificultyFilters.includes('dificulty=' + item.id + '&')">
+            <input
+              (change)="setDificulty(item.id)"
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="checkFaculty"
+              checked
+            />
+            {{ item.name }}
+          </div>
+          <div
+            *ngIf="
+              dificultyFilters.includes('dificulty=' + item.id + '&') == false
+            "
+          >
+            <input
+              (change)="setDificulty(item.id)"
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="checkFaculty"
+            />
+            {{ item.name }}
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <span class="fs-5 mb-3">Materii</span>
+
+      <div *ngFor="let category of categories" [formGroup]="filters">
+        <div *ngIf="categoryFilters.includes('category=' + category.id + '&')">
+          <input
+            (change)="setCategory(category.id)"
+            class="form-check-input"
+            type="checkbox"
+            value="checked"
+            id="checkFaculty"
+            checked
+          />
+          {{ category.name }}
+        </div>
+        <div
+          *ngIf="
+            categoryFilters.includes('category=' + category.id + '&') == false
+          "
+        >
+          <input
+            (change)="setCategory(category.id)"
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="checkFaculty"
+          />
+          {{ category.name }}
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <!-- 
+<div class="container py-3 pt-lg-4 pb-lg-5">
+  <div class="row d-flex justify-content-center">
+    <div
+      class="container m-0"
+      style="
+        width: 400px;
+        height: 50px;
+        border-radius: 5px;
+        border-color: black;
+      "
+    >
+      
+    </div>
+  </div>
+</div> -->
+    <div class="col">
+      <app-requests> </app-requests>
+      <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item disabled">
+            <a
+              class="page-link"
+              href="/requests?page={{ currentPage - 1 }}"
+              tabindex="-1"
+              >Previous</a
+            >
+          </li>
+          <li *ngIf="currentPage > 1" class="page-item">
+            <a class="page-link" href="/requests?page={{ currentPage - 1 }}">{{
+              currentPage - 1
+            }}</a>
+          </li>
+          <li class="page-item active">
+            <a class="page-link" href="/requests?page={{ currentPage }}">{{
+              currentPage
+            }}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/requests?page={{ currentPage + 1 }}">{{
+              currentPage + 1
+            }}</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="/requests?page={{ currentPage + 2 }}">{{
+              currentPage + 2
+            }}</a>
+          </li>
+          <li class="page-item">
+            <a
+              class="page-link"
+              (click)="changePage(currentPage + 1)"
+              href="/requests?page={{ currentPage + 1 }}"
+              >Next</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

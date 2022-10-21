@@ -6,8 +6,8 @@
 body {
   margin: 0;
   font-family: "Prompt, sans-serif";
-  color: white;
-  background: #202731;
+  background: rgb(83, 83, 83);
+  
 }
 section {
   position: relative;
@@ -15,17 +15,17 @@ section {
   flex-direction: column;
   align-items: center;
   min-height: 400px;
-  padding: 100px 20vw;
+  padding: 100px;
 }
 .blue {
   background: linear-gradient(
     351deg,
-    rgba(241, 187, 5, 1) 0%,
-    rgb(236, 99, 159) 100%
+    rgb(0, 0, 0) 0%,
+    rgb(46, 46, 46) 100%
   );
 }
 .red {
-  background: rgb(255, 255, 255);
+  background: rgb(83, 83, 83);
 }
 .pink {
   background: rgba(241, 187, 5, 1);
@@ -36,8 +36,8 @@ section {
 .green {
     background: linear-gradient(
     351deg,
-    rgb(236, 99, 159) 0%,
-    rgba(241, 187, 5, 1) 100%
+    rgb(0, 0, 0) 0%,
+    rgb(0, 0, 0) 100%
   );
 }
 
@@ -49,9 +49,7 @@ section {
   background-size: cover;
 }
 
-.layer1 {
-  background-image: url("./waves.svg");
-}
+
 
 .custom-shape-divider-top-1665249233 {
   position: absolute;
@@ -70,7 +68,7 @@ section {
 }
 
 .custom-shape-divider-top-1665249233 .shape-fill {
-  fill: #ffffff;
+  fill:  rgb(83, 83, 83);
 }
 
 body {
@@ -115,7 +113,7 @@ body {
   width: 220px;
   height: 321px;
   margin: 10px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-top-right-radius: 10px;
   overflow: hidden;
   display: flex;

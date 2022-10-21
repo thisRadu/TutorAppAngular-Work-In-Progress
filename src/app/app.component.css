@@ -1,26 +1,33 @@
 .avatarIcon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(
+  width: auto;
+  height: 40px;
+  border-radius: 25px;
+  background-color: rgb(0, 0, 0);
+  /* background: linear-gradient(
     351deg,
     rgb(255, 115, 0) 0%,
-    rgb(206, 0, 137) 100%
-  );
+    rgb(184, 90, 152) 100%
+  ); */
   transition: all 0.3s ease-out;
-  text-transform: uppercase;
   border-color: aliceblue;
   border-width: 0.5px;
 }
+.dropdown-menu {
+  background: linear-gradient(351deg, rgb(24, 24, 24) 0%, rgb(48, 48, 48) 100%);
+ 
+}
+.dropdown-item{
+  color: rgb(255, 255, 255);
 
+}
+.dropdown-item:hover{
+  background: rgb(80, 80, 80) ;
+
+}
 .avatarIcon:hover {
-  transform: translateY(-5px) scale(1.005) translateZ(0);
+  transform: translateY(1px) scale(1.005) translateZ(0);
 
-  background: linear-gradient(
-    351deg,
-    rgb(221, 148, 89) 0%,
-    rgb(221, 99, 150) 100%
-  );
+  background: linear-gradient(351deg, rgb(24, 24, 24) 0%, rgb(48, 48, 48) 100%);
 }
 
 a {
@@ -31,9 +38,5 @@ a:hover {
 }
 
 .blue {
-    background: linear-gradient(
-      351deg,
-      rgb(65, 55, 22) 0%,
-      rgb(87, 53, 67) 100%
-    );
-  }
+  background: rgb(20, 20, 29);
+}

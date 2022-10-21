@@ -50,17 +50,37 @@
                 type="button"
                 aria-haspopup="true"
                 aria-expanded="false"
-                style="color: black; font-weight: bold; font-size: 20px"
+                style="
+                  border-width: 0em;
+                  color: rgb(255, 255, 255);
+                  font-weight: bold;
+                  font-size: 15px;
+                  padding: 0px;
+                  padding-right: 8px;
+                "
               >
-                {{ authService.userLogged }}
+                <img
+                  src="{{ currentUser.userLogged.avatarUrl }}"
+                  alt=""
+                  style="
+                    border-radius: 25px;
+                    width: 38px;
+                    height: 38px;
+                    margin-right: 8px;
+                  "
+                />
+                {{ currentUser.userLogged.userName }}
+                <i class="bi bi-caret-down-fill"></i>
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a
                   class="dropdown-item"
-                  [routerLink]="['/user', authService.userLogged]"
+                  [routerLink]="['/user', currentUser.userLogged.id]"
                   >My Profile</a
                 >
+               
                 <a class="dropdown-item" href="#">Another action</a>
+                <li><hr class="dropdown-divider"></li>
                 <button class="dropdown-item" (click)="logOut()">
                   Log out
                 </button>
@@ -75,8 +95,5 @@
   <router-outlet></router-outlet>
 </body>
 <footer>
-  <div class="text-center p-3 blue">
-    © 2022 Copyright: Tutor.ro
-  
-  </div>
+  <div class="text-center p-3 blue">© 2022 iTutor.ro - All rights reserved</div>
 </footer>

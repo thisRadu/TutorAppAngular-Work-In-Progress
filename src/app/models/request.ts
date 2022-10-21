@@ -2,10 +2,10 @@ export interface Request {
   id?: number;
   requestorId?: number;
   tutorId?: number;
-  title?: number;
+  title?: string;
   categoryId?: number;
   subCategoryId?: number;
-  details?: number;
+  details?: string;
   price?: number;
   dificulty?: number;
   publishDate?: Date;

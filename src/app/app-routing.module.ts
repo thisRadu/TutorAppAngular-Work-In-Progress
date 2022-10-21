@@ -12,12 +12,14 @@ import { AuthGuard } from './components/auth/auth.guard';
 import { RoleGuard } from './components/auth/role.guard';
 import { HomeComponent } from './components/home/home.component';
 import { PostRequestComponent } from './components/requests/post-request/post-request.component';
+import { FiltersComponent } from './components/requests/filters/filters.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'requests', component: RequestsComponent },
+  { path: 'requests', component: FiltersComponent },
+  { path: 'requests:params', component: FiltersComponent, pathMatch: 'prefix' },
   {
     path: 'new-request',
     component: PostRequestComponent,

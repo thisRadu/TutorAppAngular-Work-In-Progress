@@ -4,12 +4,13 @@
     border-radius: 25px;
 }
 .cardCss{
-    height: 350px;
+    height: 450px;
     width: 250;
-    background-color: rgb(255, 255, 255);
+    background: rgb(83, 83, 83);
     border: none;
     margin: 20px;
     transition: all 0.3s ease-out;
+    color: rgb(255, 255, 255);
 
 }
 .cardCss:hover{

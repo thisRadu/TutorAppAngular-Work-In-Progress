@@ -5,8 +5,12 @@
   />
 
   <div class="container py-3 pt-lg-4 pb-lg-5">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-      <a *ngFor="let category of categories" href="#" class="card {{category.color}}">
+    <div class=" row justify-content-center">
+      <a
+        *ngFor="let category of categories"
+        href="/requests?category={{category.id}}"
+        class="card {{ category.color }}"
+      >
         <div class="overlay"></div>
         <div class="circle">
           <img
@@ -21,6 +25,4 @@
       </a>
     </div>
   </div>
-
- 
 </section>

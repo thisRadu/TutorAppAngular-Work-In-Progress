@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { CurrentUserService } from 'src/app/services/current-user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,11 @@ export class LoginComponent implements OnInit {
   editdata: any;
   responsedata: any;
 
-  constructor(public service: AuthService, private route: Router) {
+  constructor(
+    public service: AuthService,
+    private route: Router,
+    public curentUser: CurrentUserService
+  ) {
     localStorage.clear();
   }
   login = new FormGroup({
@@ -50,6 +55,7 @@ export class LoginComponent implements OnInit {
             localStorage.setItem('username', localUser);
           }
 
+          this.curentUser.updateLoggedUser();
           //localStorage.setItem('token',this.responsedata["value"].jwtToken);
           this.route.navigate([this.service.redirectUrl]);
         }
